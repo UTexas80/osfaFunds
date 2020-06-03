@@ -2,6 +2,8 @@ names(df)
 
 [Menu Navigation](./readmeNavigation.md)
 
+
+
 | aidByAY                               |                                 |                                 |                                |
 |---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
 | [1] "ay"                              | "tot_aid"                       | "tot_fed_aid"                   | "tot_st_aid"                   |
@@ -49,68 +51,61 @@ names(df)
 |[129] "zip"                            |                                 |                                 |                                |
 |---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
 
-| jctCounty                             |                                 |                                 |                                |
 |---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "geoID"                           | "county"                        |                                 |                                |
-
-| need.unmet                            |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "ay"                              | "desc"                          | "unmetNeedSum"                  | "unmetNeedAvg"                 |
-
-
-| profile.efcHZbyCollege                |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "ay"                              | "college"                       | "hope"                          | "Zell"                         |
-| [5] "primary_efc"                     |                                 |                                 |                                |
-
-| profile.fafsaByCounty                 |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "ay"                              | "county"                        | "cohorts"                       | "hope"                         |
-| [5] "Zell"                            | "primary_efc"                   | "unmet_need_after_gift"         | "unmet_need_all_aid"           |
-| [9] "tot_aid"                         | "total_fed_aid"                 | "total_st_aid"                  | "tot_non_gov_aid"              |
-
-| profile.fafsaByRace                   |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "ay"                              | "county"                        | "cohorts"                       |"hope"                          |
-
-
-| urbanRural                            |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "geoid"                           | "state"                         | "geography_name"                |"census_tot_pop_2010"           |
-| [5] "census_urb_pop_2010"             | "census_rural_pop_2010"         | "census_rur_percent_2010"       |"classification"                |
-| [9] "county_cd"                       | "county_desc"                   | "county_seat"                   |"county_name"                   |
-|[13] "fips_cd"                         | "state_cd"                      | "avg_lat"                       |"avg_long                       |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-
-| gparace                               |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "unmetNeed"                       | "race"                          | "count"                         | "gpa"                          |
-
-
-| run.pctByRace                         |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|
-| [1] "Rounded.Unmet.need"              | "race"                          | "pct"                           |                                |
-
-
-| urban.Rural                           |data:/urban.file                 |path: o:/Departments/Research/Rahul Request for Profile Data/data/urban.xlsx|
-|---------------------------------------|---------------------------------|---------------------------------|------------------------------------------|
-
-|-urban.Rural---------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
-| [01] "fip"                            | "GEOID"                         | "STATE"                         |"GEOGRAPHY_NAME"                | "CENSUS_TOT_POP_2010"        |
-| [06] "CENSUS_URB_POP_2010"            | "CENSUS_RURAL_POP_2010"         | "CENSUS_RUR_PERCENT_2010"       | "CLASSIFICATION"               | "COUNTY_CD"                  |
-| [11] "COUNTY_DESC"                    | "COUNTY_SEAT"                   | "COUNTY_NAME"                   | "FIPS_CD"                      | "STATE_CD"                   |
-| [16] "AVG_LAT"                        | "AVG_LONG"                      |                                 |                                |                              |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
-
-| urban.Rural                           |data:/geoID.file                 |path: o:/Departments/Research/Rahul Request for Profile Data/data/geoID.xlsx|
-|---------------------------------------|---------------------------------|---------------------------------|------------------------------------------|
-
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
-| geoID.urbanRural                      |                                 |                                 |                                |
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
-| [1] "geoid"                           | "state"                         | "geography_name"                | "census_tot_pop_2010"          |  "census_urb_pop_2010"       |
-| [6] "census_rural_pop_2010"           | "census_rur_percent_2010"       | "classification"                | "county_cd"                    |  "county_desc"               |
-|[11] "county_seat"                     | "county_name"                   | "fips_cd"                       | "state_cd"                     |  "lat"                       |
-|[16] "long"                            |                                 |                                 |             |                  |                              | 
-|---------------------------------------|---------------------------------|---------------------------------|--------------------------------|------------------------------|
+"Date"                                  |
+"AY"                                    |       
+"Fund_Code"                             |                          
+"Fund_Title"
+"Fund_Title_Long"
+"Fall_Original_Offers_Count"
+"Fall_Original_Offers_Amount"
+"Fall_Current_Offered_Count"
+"Fall_Current_Offered_Amount"
+"Fall_Offered_Count"
+"Fall_Offered_Amount"
+"Fall_Accepted_Count"
+"Fall_Accepted_Amount"
+"Fall_Original_Declined_Count"
+"Fall_Declined_Amount"
+"Fall_Cancelled_Count"
+"Fall_Cancelled_Amount"
+"Fall_Authorized_Count"
+"Fall_Authorized_Amount"
+"Fall_Paid_Count"
+"Fall_Paid_Amount"
+"Spring_Original_Offers_Count"
+"Spring_Original_Offers_Amount"
+"Spring_Current_Offered_Count"
+"Spring_Current_Offered_Amount"
+"Spring_Offered_Count"
+"Spring_Offered_Amount"
+"Spring_Accepted_Count"
+"Spring_Accepted_Amount"
+"Spring_Original_Declined_Count"
+"Spring_Declined_Amount"
+"Spring_Cancelled_Count"
+"Spring_Cancelled_Amount"
+"Spring_Authorized_Count"
+"Spring_Authorized_Amount"
+"Spring_Paid_Count"
+"Spring_Paid_Amount"
+"Summer_Original_Offers_Count"
+"Summer_Original_Offers_Amount"
+"Summer_Current_Offered_Count"
+"Summer_Current_Offered_Amount"
+"Summer_Offered_Count"
+"Summer_Offered_Amount"
+"Summer_Accepted_Count"
+"Summer_Accepted_Amount"
+"Summer_Original_Declined_Count"
+"Summer_Declined_Amount"
+"Summer_Cancelled_Count"
+"Summer_Cancelled_Amount"
+"Summer_Authorized_Count"
+"Summer_Authorized_Amount"
+"Summer_Paid_Count"
+"Summer_Paid_Amount"
+"Fund_Type"
+"Fund_Source"
+"Federal_Fund_ID"
+"Fund_Cross_Reference"
