@@ -89,6 +89,8 @@ rm(list = ls()[grepl("(SQL|metadata)", ls())])
 ################################################################################
 ## Step 99.98: PROCESSING TIME                                               ###
 ################################################################################
+end.time        <- Sys.time()
+print(end.time - start.time)
 finish.time = Sys.time()
 time = finish.time - start.time
 print(finish.time - start.time)

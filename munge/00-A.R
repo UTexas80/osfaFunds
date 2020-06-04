@@ -44,7 +44,8 @@ dt_osfa_term <- data.table::rbindlist(
   lapply(osfa_term_url[-c(16),], data.table::fread, showProgress = TRUE, fill = TRUE, header = FALSE)
 )
 # -------------------------------------------------------------------------- https://tinyurl.com/y6o5wnay
-names(dt_osfa_term)[1:57] <- dt_osfa_term_headings[]                  # Adding columns to a data table
+names(dt_osfa_term)[1:57] <- dt_osfa_term_headings[]                         # Adding columns to a data table
+
 # -------------------------------------------------------------------------- https://tinyurl.com/y3fk87wk
 # osfa_term_download  <- do.call(rbind,
 #     lapply(osfa_term_url,function(i){
