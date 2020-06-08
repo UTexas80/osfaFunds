@@ -13,15 +13,51 @@ dt_osfa_term[, c(7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29,
   lapply(dt_osfa_term[, ..iOdd], function(x) {
     as.integer(trimws(gsub("[\\$,]", "", x), "b"))
   })]
-# --------------------------------------------------------------------------Sum column every n column in a data frame R
-a <- seq(6,21,by=1)
-b <- seq(22,37,by=1)
-c <- seq(38,53,by=1)
-rbind(a,b,c)
-add_column <- cbind(a,b,c)
+# --------------------------------------------------------------------------
+# Sum column every n column in a data frame R   https://tinyurl.com/yba3qq5f
+# --------------------------------------------------------------------------
+a <- c(
+  "tot_Original_Offers_Count",
+  "tot_Original_Offers_Amount",
+  "tot_Current_Offered_Count",
+  "tot_Current_Offered_Amount",
+  "tot_Offered_Count",
+  "tot_Offered_Amount",
+  "tot_Accepted_Count",
+  "tot_Accepted_Amount",
+  "tot_Original_Declined_Count",
+  "tot_Declined_Amount",
+  "tot_Cancelled_Count",
+  "tot_Cancelled_Amount",
+  "tot_Authorized_Count",
+  "tot_Authorized_Amount",
+  "tot_Paid_Count",
+  "tot_Paid_Amount"
+)
+b <- seq(6,21,  by = 1)
+c <- seq(22,37, by = 1)
+d <- seq(38,53, by = 1)
 
-df <- data.frame(replicate(expr=rnorm(100),n = 10))
-sapply(seq(1,9,by=2),function(i) rowSums(df[,i:(i+1)]))
+rbind(a,b,c)
+add_column <- cbind(a,b,c,d)
+m <- cbind(b,c,d)
+# --------------------------------------------------------------------------
+# converting multiple columns from character to numeric format in r
+# https://tinyurl.com/ybm2xfht
+# --------------------------------------------------------------------------
+df <- as.data.table(add_column)
+dt <- df %>%
+  select(-a) %>% # this removes the alpha column if all your character columns need converted to numeric
+  mutate_if(is.character,as.numeric)
+dt_add_column <- data.table(cbind(df[,1],dt))
+# --------------------------------------------------------------------------
+# Sum column every n column in a data frame R
+# https://tinyurl.com/yba3qq5f
+# --------------------------------------------------------------------------
+mapply(function(x) {lapply(dt_add_column[,..x], function(j) {g <<- as.matrix(A[,..j]) })}, seq(2,4, by = 1))
+
+df <- data.frame(replicate(expr = rnorm(100),n = 10))
+sapply(seq(1,9, by = 2),function(i) rowSums(df[,i:(i + 1)]))
 # -------------------------------------------------------------------------
 # dt_osfa_term[, ..iOdd] <- dt_osfa_term[, lapply(dt_osfa_term[,
 #   ..iOdd], function(x) {
