@@ -54,10 +54,23 @@ dt_add_column <- data.table(cbind(df[,1],dt))
 # Sum column every n column in a data frame R
 # https://tinyurl.com/yba3qq5f
 # --------------------------------------------------------------------------
+A <- dt_osfa_term
 mapply(function(x) {lapply(dt_add_column[,..x], function(j) {g <<- as.matrix(A[,..j]) })}, seq(2,4, by = 1))
+mapply(function(x) {lapply(dt_add_column[,..x], function(j) A[,..j])}, seq(2,4, by = 1))
 
 df <- data.frame(replicate(expr = rnorm(100),n = 10))
 sapply(seq(1,9, by = 2),function(i) rowSums(df[,i:(i + 1)]))
+# -------------------------------------------------------------------------
+list_totals         <- mapply(function(x) {lapply(dt_add_column[,..x], function(j) A[,..j])}, seq(2,4, by = 1))
+dt_totals           <- list_totals$b +  list_totals$c +  list_totals$d
+dt_totals           <- dt_totals %>% rename_if(is.numeric, funs(str_replace(., "Fall", "Total")))
+dt_osfa_term_totals <- cbind(dt_osfa_term, dt_totals)
+# --------------------------------------------------------------------------
+dt_dashboard_term_funds <- data.table::dcast.data.table(
+                            dt_osfa_term_totals, 
+                            Date ~ Fund_Title, 
+                            value.var = "Total_Paid_Count", 
+                            fun.aggregate = sum)
 # -------------------------------------------------------------------------
 # dt_osfa_term[, ..iOdd] <- dt_osfa_term[, lapply(dt_osfa_term[,
 #   ..iOdd], function(x) {

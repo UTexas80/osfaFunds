@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "..\\ProjectTemplate"
+		},
+		{
+			"path": "..\\GoogleSync"
+		},
+		{
+			"path": "..\\..\\BookdownPT"
 		}
 	],
 	"settings": {
@@ -18,7 +24,13 @@
 			"statusBarItem.hoverBackground": "#103428",
 			"titleBar.border": "#040d0a",
 			"titleBar.inactiveBackground": "#040d0a99",
-			"titleBar.inactiveForeground": "#e7e7e799"
+			"titleBar.inactiveForeground": "#e7e7e799",
+			"activityBar.background": "#103428",
+			"titleBar.activeBackground": "#040d0a",
+			"titleBar.activeForeground": "#e7e7e7",
+			"activityBar.foreground": "#e7e7e7",
+			"statusBar.background": "#040d0a",
+			"statusBar.foreground": "#e7e7e7"
 		},
 		"peacock.color": "#040d0a"
 	}
