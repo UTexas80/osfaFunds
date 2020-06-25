@@ -1,10 +1,14 @@
 
 # --------------------------------------------------------------------------
 # Processing Start Time
-start.time                <- Sys.time()
-started.at                <- proc.time()
+start.time        <- Sys.time()
+started.at        <- proc.time()
 # --------------------------------------------------------------------------
-termFunds <- data.table::dcast.data.table(OSFA.TermFunds, Date ~ Fund.Title, value.var = "Total.Paid.Count", fun.aggregate = sum)
+termFunds         <- data.table::dcast.data.table(OSFA.TermFunds, Date ~ Fund.Title, value.var = "Total.Paid.Count", fun.aggregate = sum)
+# ------------------------------------------------------------------------------
+# Google Data Studio date formatting                https://tinyurl.com/ycvosxhg
+# ------------------------------------------------------------------------------
+termFunds$Date    <- format(termFundsf$Date, format = "%Y%m%d")                 
 # -------------------------------------------------------------------------- https://tinyurl.com/y3fk87wk
 # osfa_term_download  <- do.call(rbind,
 #     lapply(osfa_term_url,function(i){
