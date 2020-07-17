@@ -66,11 +66,19 @@ dt_totals           <- list_totals$b +  list_totals$c +  list_totals$d
 dt_totals           <- dt_totals %>% rename_if(is.numeric, funs(str_replace(., "Fall", "Total")))
 dt_osfa_term_totals <- cbind(dt_osfa_term, dt_totals)
 # --------------------------------------------------------------------------
+dt_osfa_ay_totals <- cbind(dt_osfa_term[,c(2:3)], dt_totals)[, lapply(.SD, sum), by=.(AY, Fund_Code)]
+# --------------------------------------------------------------------------
 dt_dashboard_term_funds <- data.table::dcast.data.table(
-                            dt_osfa_term_totals, 
-                            Date ~ Fund_Title, 
-                            value.var = "Total_Paid_Count", 
+                            dt_osfa_term_totals,
+                            Date ~ Fund_Title,
+                            value.var = "Total_Paid_Count",
                             fun.aggregate = sum)
+# -------------------------------------------------------------------------
+dt_dashboard_term_funds$Date <-
+  as.Date(
+    dt_dashboard_term_funds$Date,
+      format = "%d-%b-%y"
+    )
 # -------------------------------------------------------------------------
 # dt_osfa_term[, ..iOdd] <- dt_osfa_term[, lapply(dt_osfa_term[,
 #   ..iOdd], function(x) {

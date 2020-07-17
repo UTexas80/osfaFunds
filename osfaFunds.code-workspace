@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "..\\..\\BookdownPT"
+		},
+		{
+			"path": "..\\EnrolledStudentAid"
 		}
 	],
 	"settings": {
@@ -28,9 +31,7 @@
 			"activityBar.background": "#103428",
 			"titleBar.activeBackground": "#040d0a",
 			"titleBar.activeForeground": "#e7e7e7",
-			"activityBar.foreground": "#e7e7e7",
-			"statusBar.background": "#040d0a",
-			"statusBar.foreground": "#e7e7e7"
+			"activityBar.foreground": "#e7e7e7"
 		},
 		"peacock.color": "#040d0a"
 	}

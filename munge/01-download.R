@@ -12,7 +12,7 @@ args                      <- commandArgs(TRUE)
 start.time                <- Sys.time()
 syncFileDate              <- format(Sys.Date(), "%Y%m%d")
 # --------------------------------------------------------------------------
-term_dates                <- seq(as.Date("2019-08-16"), as.Date("2020-05-29"), "day")
+term_dates                <- seq(as.Date("2019-08-16"), Sys.Date(), "day")
 x_term_dates              <- xts(1:length(term_dates), term_dates)
 x_term_dates              <- x_term_dates[.indexwday(x_term_dates) %in% 5]                                   # date to .xts
 # --------------------------------------------------------------------------
@@ -41,7 +41,7 @@ dt_download               <- as.data.table(data.frame(file_name, file_desc, file
 print(paste0("gdrive term funds old = ", "", nrow(gdrive_term_fund)))
 # -------------------------------------------------------------------------- https://tinyurl.com/y7kvlyoo
 dt_osfa_term <- data.table::rbindlist(
-  lapply(osfa_term_url[-c(16),], data.table::fread, showProgress = TRUE, fill = TRUE, header = FALSE)
+  lapply(osfa_term_url[-c(16,48:50),], data.table::fread, showProgress = TRUE, fill = TRUE, header = FALSE)
 )
 # -------------------------------------------------------------------------- https://tinyurl.com/y6o5wnay
 names(dt_osfa_term)[1:57] <- dt_osfa_term_headings[]                         # Adding columns to a data table

@@ -8,7 +8,7 @@ termFunds         <- data.table::dcast.data.table(OSFA.TermFunds, Date ~ Fund.Ti
 # ------------------------------------------------------------------------------
 # Google Data Studio date formatting                https://tinyurl.com/ycvosxhg
 # ------------------------------------------------------------------------------
-termFunds$Date    <- format(termFundsf$Date, format = "%Y%m%d")                 
+termFunds$Date    <-   as.Date(termFunds$Date, format = "%d-%b-%y")
 # -------------------------------------------------------------------------- https://tinyurl.com/y3fk87wk
 # osfa_term_download  <- do.call(rbind,
 #     lapply(osfa_term_url,function(i){
