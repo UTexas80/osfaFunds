@@ -6,10 +6,10 @@ data_loading: TRUE
 data_loading_header: TRUE
 data_ignore:
 load_libraries: TRUE
-libraries: checkpoint, data.table, dataMeta, datamodelr, devtools, DiagrammeR, dplyr, DT, ezknitr, flexdashboard, flextable,
-              formatR, formattable, futile.logger, googledrive, googlesheets4, janitor, keyring, knitr, logger, lubridate,
-              mailR, openxlsx, orca, pacman, packagefinder, pdftools, plyr, ProjectTemplate, RDCOMClient, readxl, reprex,
-              reshape2, rio, rmarkdown, RMySQL, stringr, taskscheduleR, tidyverse, tryCatchLog, xlsx, xtable, xts, zoo
+libraries: checkpoint,  data.table, dataMeta, datamodelr, devtools, DiagrammeR, dplyr, DT, ezknitr, flexdashboard, flextable,
+              formatR,  formattable, futile.logger, googledrive, googlesheets4, janitor, keyring, knitr, logger, lubridate,
+              mailR,    openxlsx, orca, pacman, packagefinder, pdftools, plyr, ProjectTemplate, RDCOMClient, readxl, reprex,
+              reshape2, rio, rmarkdown, RMySQL, scales, stringr, taskscheduleR, tidyverse, tryCatchLog, xlsx, xtable, xts, zoo
 logging: TRUE
 logging_level: INFO
 munging: TRUE

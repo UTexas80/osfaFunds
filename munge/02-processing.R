@@ -66,7 +66,11 @@ dt_totals           <- list_totals$b +  list_totals$c +  list_totals$d
 dt_totals           <- dt_totals %>% rename_if(is.numeric, funs(str_replace(., "Fall", "Total")))
 dt_osfa_term_totals <- cbind(dt_osfa_term, dt_totals)
 # --------------------------------------------------------------------------
-dt_osfa_ay_totals <- cbind(dt_osfa_term[,c(2:3)], dt_totals)[, lapply(.SD, sum), by=.(AY, Fund_Code)]
+dt_osfa_ay_totals   <- cbind(dt_osfa_term[,c(2:3)], dt_totals)[, lapply(.SD, sum), by=.(AY, Fund_Code)] %>%
+                      mutate_at(vars(matches("_Amount")), dollar)
+# W I P 
+# dt_osfa_ay_totals   <- setorder(cbind(dt_osfa_term[,c(1:2)], dt_totals), Date, AY)[, lapply(.SD, sum), by=.(Date, AY)]%>%
+#                       mutate_at(vars(matches("_Amount")), dollar) 
 # --------------------------------------------------------------------------
 dt_dashboard_term_funds <- data.table::dcast.data.table(
                             dt_osfa_term_totals,

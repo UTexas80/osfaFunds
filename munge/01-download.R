@@ -14,7 +14,7 @@ syncFileDate              <- format(Sys.Date(), "%Y%m%d")
 # --------------------------------------------------------------------------
 term_dates                <- seq(as.Date("2019-08-16"), Sys.Date(), "day")
 x_term_dates              <- xts(1:length(term_dates), term_dates)
-x_term_dates              <- x_term_dates[.indexwday(x_term_dates) %in% 5]                                   # date to .xts
+x_term_dates              <- x_term_dates[.indexwday(x_term_dates) %in% 5]
 # --------------------------------------------------------------------------
 dt_term_dates             <- as.data.table(x_term_dates, keep.rownames = TRUE)  # xts to data.table
 names(dt_term_dates)[1]   <- "date"
